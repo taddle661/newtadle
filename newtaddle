@@ -1,0 +1,121 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>自己紹介ページ</title>
+  <style>
+    :root{
+      --bg:#f4f9ff;
+      --text:#1e293b;
+      --accent:#2563eb;
+      --card:#ffffff;
+      --muted:#64748b;
+    }
+    *{box-sizing:border-box;}
+    body{
+      margin:0;
+      font-family:"Inter", sans-serif;
+      background:var(--bg);
+      color:var(--text);
+      padding:20px;
+    }
+    .container{
+      max-width:800px;
+      margin:auto;
+      background:var(--card);
+      padding:24px;
+      border-radius:12px;
+      box-shadow:0 6px 20px rgba(0,0,0,0.08);
+    }
+    header{
+      text-align:center;
+    }
+    header img{
+      width:120px;
+      height:120px;
+      object-fit:cover;
+      border-radius:50%;
+      border:4px solid var(--accent);
+    }
+    h1{
+      margin:12px 0 4px;
+    }
+    p.lead{
+      margin:0;
+      color:var(--muted);
+    }
+    section{
+      margin-top:24px;
+    }
+    h2{
+      border-bottom:2px solid var(--accent);
+      padding-bottom:4px;
+    }
+    ul{
+      padding-left:20px;
+    }
+    .theme-btn{
+      margin-top:20px;
+      padding:8px 14px;
+      border:none;
+      background:var(--accent);
+      color:white;
+      border-radius:6px;
+      cursor:pointer;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <img src="https://via.placeholder.com/120" alt="プロフィール画像">
+      <h1>山田 太郎</h1>
+      <p class="lead">Web開発者 & デザイナー</p>
+      <button class="theme-btn" id="toggleTheme">テーマ切替</button>
+    </header>
+
+    <section>
+      <h2>自己紹介</h2>
+      <p>こんにちは！山田太郎です。フロントエンド開発とUIデザインが得意で、ReactやVue.jsを使った開発経験があります。趣味は写真撮影とカフェ巡りです。</p>
+    </section>
+
+    <section>
+      <h2>スキル</h2>
+      <ul>
+        <li>HTML / CSS / JavaScript</li>
+        <li>React / Vue.js</li>
+        <li>UI/UX デザイン</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>連絡先</h2>
+      <ul>
+        <li>Email: taro@example.com</li>
+        <li>Twitter: <a href="#">@taro_dev</a></li>
+      </ul>
+    </section>
+  </div>
+
+  <script>
+    const btn = document.getElementById('toggleTheme');
+    let dark = false;
+    btn.addEventListener('click', () => {
+      if (!dark) {
+        document.documentElement.style.setProperty('--bg', '#0f172a');
+        document.documentElement.style.setProperty('--text', '#f1f5f9');
+        document.documentElement.style.setProperty('--card', '#1e293b');
+        document.documentElement.style.setProperty('--muted', '#94a3b8');
+        dark = true;
+      } else {
+        document.documentElement.style.setProperty('--bg', '#f4f9ff');
+        document.documentElement.style.setProperty('--text', '#1e293b');
+        document.documentElement.style.setProperty('--card', '#ffffff');
+        document.documentElement.style.setProperty('--muted', '#64748b');
+        dark = false;
+      }
+    });
+  </script>
+</body>
+</html>
